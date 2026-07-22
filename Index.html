@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irsyad & Nur — Wedding RSVP</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ornament"><div class="ornament-text">You Are Cordially Invited</div></div>
+
+<div class="header">
+  <div class="couple-names">Irsyad<span class="amp">&</span>Nur</div>
+  <div class="wedding-date">Saturday, 18 October 2026</div>
+  <div class="wedding-venue">Dewan Seri Kenanga, Kuala Lumpur</div>
+  <div class="divider"></div>
+</div>
+
+<div class="countdown" id="countdown">
+  <div class="cd-item"><div class="cd-num" id="cdDays">88</div><div class="cd-label">Days</div></div>
+  <div class="cd-item"><div class="cd-num" id="cdHours">0</div><div class="cd-label">Hours</div></div>
+  <div class="cd-item"><div class="cd-num" id="cdMins">0</div><div class="cd-label">Minutes</div></div>
+</div>
+
+<div class="rsvp-form" id="rsvpForm">
+  <div class="form-title">Confirm Your Attendance</div>
+  <div class="form-sub">Kindly respond by 1 October 2026</div>
+  <div class="error-msg" id="errorMsg"></div>
+
+  <div class="field">
+    <label class="field-label">Full Name *</label>
+    <input class="field-input" id="guestName" type="text" placeholder="Ahmad bin Abdullah" required>
+  </div>
+
+  <div class="field">
+    <label class="field-label">Phone / WhatsApp</label>
+    <input class="field-input" id="guestPhone" type="tel" placeholder="+60 12-345 6789">
+  </div>
+
+  <div class="field">
+    <label class="field-label">Relationship</label>
+    <select class="field-input" id="guestRelation">
+      <option value="">Select...</option>
+      <option value="Family">Family</option>
+      <option value="Friend">Friend</option>
+      <option value="Colleague">Colleague</option>
+      <option value="Neighbour">Neighbour</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label class="field-label">Will you be attending? *</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="attending" id="attYes" value="yes"><label for="attYes">Joyfully Accept ✨</label></div>
+      <div class="radio-option"><input type="radio" name="attending" id="attNo" value="no"><label for="attNo">Regretfully Decline</label></div>
+    </div>
+  </div>
+
+  <div class="field" id="guestCountField" style="display:none">
+    <label class="field-label">Number of Guests (including yourself)</label>
+    <div class="stepper">
+      <div class="stepper-btn" id="stepDown">−</div>
+      <div class="stepper-val" id="stepVal">1</div>
+      <div class="stepper-btn" id="stepUp">+</div>
+    </div>
+  </div>
+
+  <div class="field" id="dietField" style="display:none">
+    <label class="field-label">Dietary Requirements</label>
+    <div class="diet-options">
+      <div class="diet-pill" data-val="none">No restrictions</div>
+      <div class="diet-pill" data-val="vegetarian">Vegetarian</div>
+      <div class="diet-pill" data-val="no-seafood">No Seafood</div>
+      <div class="diet-pill" data-val="no-nuts">No Nuts</div>
+      <div class="diet-pill" data-val="other">Other</div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="field-label">Message for the Couple (optional)</label>
+    <textarea class="field-input" id="guestMsg" placeholder="Tahniah! Semoga berbahagia..."></textarea>
+  </div>
+
+  <button class="submit-btn" id="submitBtn" disabled>Submit RSVP</button>
+</div>
+
+<div class="loading-state" id="loadingState">
+  <div class="spinner"></div>
+  <div style="font-size:0.75rem;color:var(--text-dim)">Sending your RSVP...</div>
+</div>
+
+<div class="success-state" id="successState">
+  <div class="success-icon">💌</div>
+  <div class="success-title">Thank you!</div>
+  <div class="success-msg" id="successMsg">Your RSVP has been recorded.</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
